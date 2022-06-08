@@ -1,0 +1,5 @@
+.DS_Store
+.sass-cache
+static/processed_images/
+themes/*/.git
+public/

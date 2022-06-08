@@ -1,0 +1,56 @@
+{% extends "index.html" %}
+
+{% block page_header %}
+<header class="post-title">
+    <h1 class="p-name">{{ page.title }}</h1>
+    <p class="p-published">
+        Posted on <time class="dt-published" datetime="{{ page.date }}">{{ page.date | date(format="%B %d, %Y") }}</time>{%- if page.extra.author %} by <a class="p-author h-card" href="{{ get_url(path='about') }}">{{ page.extra.author }}</a>{%- endif %}
+    </p>
+    {% if page.updated -%}
+    <p class="p-published">
+        <a href="#changelog" title="Changelog for {{ page.title }}">Last updated on <time class="dt-updated" datetime="{{ page.updated }}">{{ page.updated | date(format="%B %d, %Y") }}</time></a>
+    </p>
+    {%- endif %}
+</header>
+{% endblock page_header %}
+
+{% block content %}
+<main>{{ page.content | safe }}</main>
+
+{# Display changelog if present #}
+{% if page.extra.changelog %}
+<hr>
+<section class="changelog" id="changelog">
+    <h4>Changelog:</h4>
+    <dl>
+        {% for date, notes in page.extra.changelog| sort(attribute="date") | reverse | group_by(attribute="date") %}
+            <dt><time class="dt-updated" datetime="{{ date }}">{{ date }}</time></dt>
+            {% for note in notes %}
+            <dd>{{ note.note | markdown | safe }}</dd>
+            {% endfor %}
+        {% endfor %}
+    </dl>
+</section>
+{% endif %}
+
+{% if page.earlier or page.later %}
+<hr>
+<section class="post-nav flexer">
+    <section class="previous_article">
+        {% if page.earlier -%}
+            <small>&larr; Previously:</small>
+            <br>
+                <a href="{{ page.earlier.permalink }}" title="Previously: {{ page.earlier.title }}">{{ page.earlier.title }}</a>
+            {%- endif %}
+        </section>
+        <section class="next_article">
+            {% if page.later -%}
+                <small>Afterward: &rarr;</small>
+                <br>
+                    <a href="{{ page.later.permalink }}" title="Next: {{ page.later.title }}">{{ page.later.title }}</a>
+                {%- endif %}
+            </section>
+        </section>
+    </section>
+{% endif %}
+{% endblock content %}

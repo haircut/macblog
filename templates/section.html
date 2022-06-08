@@ -1,0 +1,16 @@
+{% extends "index.html" %}
+
+{% block content %}
+<header>
+    <h1>{{ section.title }}</h1>
+</header>
+<main>
+<dl class="post-listing">
+{% for post in section.pages %}
+<dt><a href="{{ post.permalink }}" title="Continue reading '{{ post.title }}'" class="post-link">{{ post.title }}</a></dt>
+{%- if post.date -%}<dd class="post-timestamp p-published">Posted {{ post.date }}{%- if post.updated -%}, last updated {{ post.updated }}{% endif %}</dd>{%- endif -%}
+{%- if post.description -%}<dd>{{ post.description | safe }}</dd>{%- endif -%}
+{% endfor %}
+</dl>
+</main>
+{% endblock content %}

@@ -1,0 +1,21 @@
+{#-
+- Resizes the image to a maximum width of 720px.
+- Converts JPG and PNG images to WEBP.
+- Sets alt text on the img element, if provided.
+- Sets a caption for the figure, if provided.
+- Links to the original image, if requested.
+-#}
+{% if not max_width -%}{% set max_width = 720 -%}{%- endif %}
+{% if src is matching("[.](jpg|jpeg|png)$") %}
+    {% set image = resize_image(path=src, width=max_width, op="fit_width", format="webp") %}
+    {% set image_path = image.url %}
+{% else %}
+    {% set image = get_image_metadata(path=src) %}
+    {% set image_path = get_url(path=src) %}
+{% endif %}
+<figure>
+    {%- if link_original -%}{% set image_link = get_url(path=src) %}<a href="{{ image_link }}">{%- endif -%}
+    <img src="{{ image_path }}"{%- if alt -%} alt="{{ alt }}"{%- endif -%} width="{{ image.width }}" height="{{ image.height }}">
+    {%- if link_original -%}</a>{%- endif -%}
+    {%- if caption %}<figcaption>{{ caption | safe }}</figcaption>{% endif -%}
+</figure>
