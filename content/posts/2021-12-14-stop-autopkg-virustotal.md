@@ -8,6 +8,7 @@ aliases = [
 description = "How to stop an AutoPkg run – and avoid uploading a potentially compromised package to your infrastructure – if VirusTotal detects malware."
 [extra]
 author = "Matthew Warren"
+github_discussion = "https://github.com/haircut/macblog/discussions/16"
 +++
 
 Hannes Juutilainen's [VirusTotalAnalyzer][vta] is a fantastic AutoPkg

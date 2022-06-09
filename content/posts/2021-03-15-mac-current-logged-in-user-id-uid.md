@@ -8,6 +8,7 @@ aliases = [
 description = "A reliable method to determine the logged-in user's user ID (UID) for use with launchctl."
 [extra]
 author = "Matthew Warren"
+github_discussion = "https://github.com/haircut/macblog/discussions/12"
 +++
 
 Many scripted macOS workflows require determining the username of the currently logged-in user. Whether you wish to execute a command as that user via `su` or you just want to log the username during your script's execution, you may need to query macOS for this information.

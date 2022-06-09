@@ -9,6 +9,7 @@ aliases = [
 description = "How to set up a Self Service utility to help your users reset their Privacy decisions."
 [extra]
 author = "Matthew Warren"
+github_discussion = "https://github.com/haircut/macblog/discussions/8"
 +++
 
 Taking a cue from iOS, Mac OS X 10.8 "Mountain Lion" introduced new systems to

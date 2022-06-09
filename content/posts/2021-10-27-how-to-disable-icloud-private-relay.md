@@ -8,6 +8,7 @@ aliases = [
 description = "Learn how to disable iCloud Private Relay in macOS using a Configuration Profile."
 [extra]
 author = "Matthew Warren"
+github_discussion = "https://github.com/haircut/macblog/discussions/13"
 +++
 
 Apple recently introduced [iCloud Private Relay][about] as an additional

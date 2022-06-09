@@ -9,6 +9,7 @@ aliases = [
 description = "An AutoPkg processor to utput the current date and time, and optionally output future or past dates and times for use in other processors."
 [extra]
 author = "Matthew Warren"
+github_discussion = "https://github.com/haircut/macblog/discussions/19"
 +++
 
 I recently needed to use the date and time of an AutoPkg run from within the

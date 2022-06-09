@@ -9,6 +9,7 @@ aliases = [
 description = "How to integrate Jamf Pro with Snipe-IT to set the computer hostname to match your inventory management system."
 [extra]
 author = "Matthew Warren"
+github_discussion = "https://github.com/haircut/macblog/discussions/11"
 +++
 
 A couple of years ago, I shared a [method to set a Mac's hostname via a Google

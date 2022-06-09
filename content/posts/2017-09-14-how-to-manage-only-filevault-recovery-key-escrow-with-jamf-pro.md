@@ -9,6 +9,7 @@ aliases = [
 description = "How to properly create a Configuration Profile to manage FileVault Recovery Key Escrow for Mac OS X 10.13 and above."
 [extra]
 author = "Matthew Warren"
+github_discussion = "https://github.com/haircut/macblog/discussions/1"
 +++
 
 The Jamf Pro GUI allows you to automatically set up the necessary payloads to

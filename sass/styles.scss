@@ -648,6 +648,17 @@ hr.post-separator {
     margin: 3rem auto;
 }
 
+// Post response
+section.post-response {
+    border-top: 1px solid var(--border);
+    padding-top: 2rem;
+    text-align: center;
+
+    p.title {
+        font-weight: bold;
+    }
+}
+
 /* Footer */
 footer > nav {
     margin-bottom: 1rem;

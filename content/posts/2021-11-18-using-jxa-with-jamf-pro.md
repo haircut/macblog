@@ -8,6 +8,7 @@ aliases = [
 description = "Quick advice on using JavaScript for Automation (JXA) in both Scripts and Extension Attributes within Jamf Pro."
 [extra]
 author = "Matthew Warren"
+github_discussion = "https://github.com/haircut/macblog/discussions/15"
 +++
 
 Quick follow-up to my earlier guide on [using JavaScript for Automation](@/posts/2021-11-14-how-to-parse-json-macos-command-line.md).

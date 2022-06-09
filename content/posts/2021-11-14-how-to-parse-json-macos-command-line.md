@@ -9,6 +9,7 @@ aliases = [
 description = "One way to parse JSON on the macOS command line, using only native tooling without external dependencies like jq or similar."
 [extra]
 author = "Matthew Warren"
+github_discussion = "https://github.com/haircut/macblog/discussions/14"
 +++
 
 JSON – [JavaScript Object Notation][jsonwiki] – is the lingua franca for

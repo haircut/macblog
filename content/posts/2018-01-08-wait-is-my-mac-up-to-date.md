@@ -10,6 +10,7 @@ aliases = [
 description = "Methods to help your users self serve their macOS update needs."
 [extra]
 author = "Matthew Warren"
+github_discussion = "https://github.com/haircut/macblog/discussions/5"
 changelog = [
     { date = 2022-06-05, note = "Added advice that these methods are no longer reliable, nor good practice, on modern versions of macOS." }
 ]

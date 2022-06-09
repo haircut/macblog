@@ -5,6 +5,7 @@ description = "Advice on enabling the root account and running tcpdump during ma
 path = "mdmpackettrace"
 [extra]
 author = "Matthew Warren"
+github_discussion = "https://github.com/haircut/macblog/discussions/21"
 +++
 
 Part of my job is to test (and re-test) first-time setup workflows for new and

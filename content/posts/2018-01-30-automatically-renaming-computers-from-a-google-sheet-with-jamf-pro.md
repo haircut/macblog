@@ -9,6 +9,7 @@ aliases = [
 description = "How to automatically rename computers based on values in a Google Sheet."
 [extra]
 author = "Matthew Warren"
+github_discussion = "https://github.com/haircut/macblog/discussions/6"
 +++
 
 In a post-imaging, DEP-only world, maintaining your organization's computer

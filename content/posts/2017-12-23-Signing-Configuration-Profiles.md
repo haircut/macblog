@@ -9,6 +9,7 @@ aliases = [
 description = "The definitive guide – I think? – to signing your Configuration Profiles."
 [extra]
 author = "Matthew Warren"
+github_discussion = "https://github.com/haircut/macblog/discussions/4"
 +++
 
 Apple has made it clear; MDM is the future.

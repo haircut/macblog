@@ -9,6 +9,7 @@ aliases = [
 description = "Name items in your Jamf Pro instance consistenty as a favor to your colleagues and your future self."
 [extra]
 author = "Matthew Warren"
+github_discussion = "https://github.com/haircut/macblog/discussions/3"
 +++
 
 For maintaining a consistent, repeatable and intuitive administrative workflow,

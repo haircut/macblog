@@ -19,7 +19,6 @@
 
 {# Display changelog if present #}
 {% if page.extra.changelog %}
-<hr>
 <section class="changelog" id="changelog">
     <h4>Changelog:</h4>
     <dl>
@@ -30,6 +29,14 @@
             {% endfor %}
         {% endfor %}
     </dl>
+</section>
+{% endif %}
+
+{% if page.extra.github_discussion %}
+<hr>
+<section class="post-response">
+    <p class="title">Questions or comments?</p>
+    <p><a href="{{ page.extra.github_discussion }}">Discuss this post on GitHub Discussions ➫</a>.</p>
 </section>
 {% endif %}
 

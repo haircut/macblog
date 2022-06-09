@@ -9,6 +9,7 @@ aliases = [
 description = "Two AutoPkg processors to send you the results of an AutoPkg run in Google Chat."
 [extra]
 author = "Matthew Warren"
+github_discussion = "https://github.com/haircut/macblog/discussions/9"
 +++
 
 Although [Slack](https://slack.com) has seemingly taken over the world

@@ -8,6 +8,7 @@ aliases = [
 description = "A quick trick to programmatically add an icon to a user's Dock."
 [extra]
 author = "Matthew Warren"
+github_discussion = "https://github.com/haircut/macblog/discussions/18"
 +++
 
 Adding your organization's common tools or newly-installed items to a user's

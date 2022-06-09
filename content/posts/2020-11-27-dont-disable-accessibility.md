@@ -8,6 +8,7 @@ aliases = [
 description = "You really shouldn't skip the new 'Accessibility' pane in macOS Setup Assistant."
 [extra]
 author = "Matthew Warren"
+github_discussion = "https://github.com/haircut/macblog/discussions/10"
 +++
 
 macOS Big Sur includes a new screen during Setup Assistant: Accessbility. It

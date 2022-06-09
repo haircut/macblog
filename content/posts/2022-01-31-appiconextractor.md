@@ -9,6 +9,8 @@ aliases = [
 description = "AppIconExtractor examines an app and exports its icon as a PNG image file (reading the CFBundleIconFile property from an app's Info.plist and saving that image as a PNG file. Additionally, AppIconExtractor can create icon variations by compositing a secondary image on top of the app's icon."
 [extra]
 author = "Matthew Warren"
+github_discussion = "https://github.com/haircut/macblog/discussions/17"
+
 +++
 
 I'm a stickler for including icons for all policies available in Jamf Pro's Self

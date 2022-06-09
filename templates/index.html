@@ -62,6 +62,12 @@
                     Posted on <time class="dt-published" datetime="{{ newest.date }}">{{ newest.date | date(format="%B %d, %Y") }}</time>{%- if newest.extra.author %} by <a class="p-author h-card" href="{{ get_url(path='about') }}">{{ newest.extra.author }}</a>{%- endif %}
                 </p>
                 {{ newest.content | safe }}
+                {% if newest.extra.github_discussion %}
+                <section class="post-response">
+                    <p class="title">Questions or comments?</p>
+                    <p><a href="{{ newest.extra.github_discussion }}">Discuss this post on GitHub Discussions ➫</a>.</p>
+                </section>
+                {% endif %}
             </article>
             {# Display a list of the next 10 posts if they exist #}
             {% if section.pages | length > 1 %}
