@@ -1,6 +1,7 @@
 +++
 title = "Express Setup, Location Services, Time Zone, and High Sierra"
 date = 2018-02-04
+updated = 2022-07-06
 path = "express-setup-high-sierra"
 aliases = [
     "post/express-setup-location-services-time-zone-and-high-sierra",
@@ -9,38 +10,41 @@ aliases = [
 description = "Explaining the correct combination of Setup Assistant screens to skip for an optimal user experience."
 [extra]
 author = "Matthew Warren"
+changelog = [
+    { date = 2022-07-06, note = "Added note about Express Setup settings being associated to an Apple ID beginning in macOS Monterey." }
+]
 +++
 
 I recently ran into a snag with our Device Enrollment Program (DEP) workflow.
-Users were not being prompted to enable Location Services to automatically set
-the time zone, nor was the explicit Time Zone selection screen displayed during
-Setup Assistant.
+Users were not being prompted to enable Location Services to automatically set the time zone, nor was the explicit Time Zone selection screen displayed during Setup Assistant.
 
 The result was that devices wound up configured with the default Cupertino, CA
-location, and a Pacific time zone. We're on the East coast – so we'd have to
-script a change of settings, or worse, have the user manually modify them.
+location, and a Pacific time zone.
+We're on the East coast – so we'd have to script a change of settings, or worse, have the user manually modify them.
 
-As it turns out, this is an effect of the new "Express Setup" option in macOS
-High Sierra.
+As it turns out, this is an effect of the new "Express Setup" option in macOS High Sierra.
 
 <!-- more -->
 
 ## Skipping Setup Assistant screens
 
-When first booted, if a Mac has network connectivity it contacts Apple to see if
-it should receive an enrollment configuration from an MDM solution.
+{% aside() %}
+**Update for macOS Monterey**
 
-In most MDMs you can configure devices to skip any of a handful of Setup
-Assistant screens. In Jamf Pro, the configuration looks like this:
+As of macOS Monterey, *Express Setup* will only display if the user is logged in to an Apple ID and has previously configured Siri, Location Services, and App Analytics settings while signed in to that Apple ID.
+{% end %}
+
+When first booted, if a Mac has network connectivity it contacts Apple to see if it should receive an enrollment configuration from an MDM solution.
+
+In most MDMs you can configure devices to skip any of a handful of Setup Assistant screens.
+In Jamf Pro, the configuration looks like this:
 
 {{ figure(src="/img/dep-express-setup/prestage-skip-bad.png") }}
 
-If a screen is skipped, the default options for settings on the screen are
-configured. In the case of Location Services, the default option is to
-**disable** Location Services.
+If a screen is skipped, the default options for settings on the screen are configured.
+In the case of Location Services, the default option is to **disable** Location Services.
 
-In macOS 10.13.3 and below, running `sudo /usr/libexec/mdmclient dep nag` will
-output the device's "activation record."
+In macOS 10.13.3 and below, running `sudo /usr/libexec/mdmclient dep nag` will output the device's "activation record."
 
 ```
 Activation record: {
@@ -77,24 +81,17 @@ Activation record: {
 ```
 
 {% alert() %}
-  <p>
-    <strong>Note:</strong> The <code>mdmclient</code> command and some 
-    terminology are specific to macOS 10.13.3 and below. Future versions of 
-    macOS may change the command and/or terminology.
-  </p>
+**Note:** The `mdmclient` command and some terminology are specific to macOS 10.13.3 and below. Future versions of macOS may change the command and/or terminology.
 {% end %}
 
-You'll notice the `SkipSetup` dictionary contains the list of Setup Assistant
-screens to be skipped.
+You'll notice the `SkipSetup` dictionary contains the list of Setup Assistant screens to be skipped.
 
-In troubleshooting our issue with Location Services, I was perplexed! The
-activation record clearly showed that Location Services was _not_ configured to
-be skipped. We should be seeing it during Setup Assistant.
+In troubleshooting our issue with Location Services I was perplexed!
+The activation record clearly showed that Location Services was _not_ configured to be skipped.
+We should be seeing it during Setup Assistant.
 
-A couple of colleagues on the [MacAdmins Slack team](https://macadmins.org)
-provided me with the necessary clue to resolve the issue. Specifically, Nate Van
-Dam [noted the new
-behavior](https://macadmins.slack.com/archives/C19MR7EM9/p1511797350000306).
+A couple of colleagues on the [MacAdmins Slack team](https://macadmins.org) provided me with the necessary clue to resolve the issue. 
+Specifically, Nate Van Dam [noted the new behavior](https://macadmins.slack.com/archives/C19MR7EM9/p1511797350000306).
 
 ## Express Setup
 
