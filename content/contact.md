@@ -2,14 +2,11 @@
 title = "Contact"
 +++
 
-Please note that **MacBlog.org** is a personal website and I do not accept
-advertisements, sponsored content, "guest posts," or other similar submissions. 
+Please note that **MacBlog.org** is a personal website and I do not accept advertisements, sponsored content, "guest posts," or other similar submissions. 
 
-I'm usually on the [MacAdmins Slack Team][macslack]; feel free to
-[direct message me][slackdm].
+I'm usually on the [MacAdmins Slack Team][macslack]; feel free to [direct message me][slackdm].
 
-You can also find my [projects on GitHub][github], and
-[various snippets on Gist][gist].
+You can also find my [projects on GitHub][github], and [various snippets on Gist][gist].
 
 You can email me at [haircut@macblog.org][email].
 
