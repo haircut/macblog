@@ -111,7 +111,7 @@ You'll need to provide that exact common name as an argument to the `codesign` b
 In practice, this would look something like:
 
 ```shell
-/usr/bin/codesign --sign "Developer ID Installer: MacBlog.org (SHJS42SFS32S)" \
+/usr/bin/codesign --sign "Developer ID Application: MacBlog.org (SHJS42SFS32S)" \
     --identifier "org.macblog.example" \
     ~/Code/example.zsh
 ```
