@@ -1,6 +1,6 @@
 +++
 title = "Manage and enforce custom Login and Background items in macOS Ventura"
-date = 2022-10-20
+date = 2022-10-24
 description = "How to enable and enforce your custom scripts in macOS Ventura using the new service management Configuration Profile payload."
 path = "manage-custom-login-items"
 [extra]
@@ -430,7 +430,7 @@ In a future version of macOS, it will likely be the **only** method to automatic
 Deleting an app bundle would delete all associated resources and automated processes.
 That's a win for the end user.
 
-It's time to invest more time in learning Swift.
+With this clear signal toward a future without LaunchDaemons and LaunchAgents, I'm personally going to invest more time in learning Swift.
 
 [updating-smappservice]: <https://developer.apple.com/documentation/servicemanagement/updating_helper_executables_from_earlier_versions_of_macos?language=objc>
 [smappservice]: <https://developer.apple.com/documentation/servicemanagement/smappservice?language=objc>
