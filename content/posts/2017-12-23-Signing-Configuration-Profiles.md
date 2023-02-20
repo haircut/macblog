@@ -250,15 +250,15 @@ editor and copy the entire contents to your clipboard. {{
 3. Click the "Management Certificate Template" tab near the top of the screen.
 4. Click the "Create Certificate from CSR" button.
 5. In the modal window, paste the contents of your CSR, then select a
-_Certificate Type_ of "Web Server Certificate" and click the "Create" button. {{
-    figure(src="/img/signing-profiles-paste-csr.png") }}
+_Certificate Type_ of "Web Server Certificate" and click the "Create" button. 
+{{ figure(src="/img/signing-profiles-paste-csr.png") }}
 6. After clicking "Create", a file with a name in the format of `C=US,CN=<common
 name you chose>,E=<email you specified>.pem` will automatically download. In my
 experience, the Jamf Pro GUI freezes at this point; simply click any link on the
 page to navigate away – we've already got what we came for!
 7. Open the downloaded `.pem` file. When prompted, choose to install the
-    certificate in your login keychain. {{
-    figure(src="/img/signing-profiles-where-install.png") }}
+    certificate in your login keychain. 
+{{ figure(src="/img/signing-profiles-where-install.png") }}
 
 The certificate is now installed to your login keychain and ready to reference
 by name when signing Configuration Profiles.
@@ -289,25 +289,27 @@ it will display the red "Unverified" notice.
    Assistant_, then select _Create a Certificate..._.
 3. In the **Certificate Assistant** window that appears, enter a sensible name.
 Select the _Identity Type_ of "Self Signed Root" and _Certificate Type_ of "Code
-    Signing". Check the box beside "Let me override defaults". {{
-    figure(src="/img/signing-profiles-create-cert-1.png") }}
+    Signing". Check the box beside "Let me override defaults". 
+{{ figure(src="/img/signing-profiles-create-cert-1.png") }}
 4. Leave the _Serial Number_ set to "1", and increase the _Validity Period_ to
-something like "1096" days (3 years) for convenience. {{
-    figure(src="/img/signing-profiles-create-cert-2.png") }}
+something like "1096" days (3 years) for convenience.
+{{ figure(src="/img/signing-profiles-create-cert-2.png") }}
 5. On the next screen, enter relevant values for your organization. Make sure to
 specify a descriptive _Common Name_ for the certificate, as this will be
     viewable when inspecting Configuration Profiles signed by this certificate.
-    {{ figure(src="/img/signing-profiles-create-cert-3.png") }}
+{{ figure(src="/img/signing-profiles-create-cert-3.png") }}
 6. Leave the default values of "2048 bits" for _Key Size_ and "RSA" for
-    _Algorithm_. {{ figure(src="/img/signing-profiles-create-cert-4.png") }}
-7. Ensure "Signature" is selected for the _Key Usage Extension_. {{
-    figure(src="/img/signing-profiles-create-cert-5.png") }}
-8. Ensure "Code Signing" is selected for the _Extended Key Usage Extension_. {{
-    figure(src="/img/signing-profiles-create-cert-6.png") }}
-9. On the following screens, leave "Include Basic Contraints Extension" and
+    _Algorithm_.
+{{ figure(src="/img/signing-profiles-create-cert-4.png") }}
+7. Ensure "Signature" is selected for the _Key Usage Extension_.
+{{ figure(src="/img/signing-profiles-create-cert-5.png") }}
+8. Ensure "Code Signing" is selected for the _Extended Key Usage Extension_.
+9. {{ figure(src="/img/signing-profiles-create-cert-6.png") }}
+10. On the following screens, leave "Include Basic Contraints Extension" and
    "Include Subject Alternate Name Extension" unchecked.
-10. When prompted, ensure the certificate is set to be stored in your "login"
-    keychain. {{ figure(src="/img/signing-profiles-create-cert-9.png") }}
+11.  When prompted, ensure the certificate is set to be stored in your "login"
+    keychain.
+{{ figure(src="/img/signing-profiles-create-cert-9.png") }}
 
 After clicking "Done" you should see the new certificate listed in your login
 keychain.
