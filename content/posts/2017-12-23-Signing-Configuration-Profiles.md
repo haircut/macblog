@@ -236,15 +236,15 @@ certificate trust chain is complete.
 3. In the **Certificate Assistant** window that appears enter an email address
     for your organization (I use a generic one) and a suitable Common Name, such
     as "<name of your organization> Profile Signing Certificate" or similar. For
-    the "Request is:" option, select "Saved to disk" then click _Continue_. {{
-    figure(src="/img/signing-profiles-certificate-assistant1.png") }}
+    the "Request is:" option, select "Saved to disk" then click _Continue_.
+{{ figure(src="/img/signing-profiles-certificate-assistant1.png") }}
 4. When prompted, choose a location to save the CSR.
 
 ### Upload the CSR to your Jamf Pro Server
 
 1. Open the CSR you saved to disk during the previous steps in a plain text
-editor and copy the entire contents to your clipboard. {{
-    figure(src="/img/signing-profiles-csr-text.png") }}
+editor and copy the entire contents to your clipboard.
+{{ figure(src="/img/signing-profiles-csr-text.png") }}
 2. Sign in to your Jamf Pro server and navigate to _Settings > Global Management
    > PKI Certificates_.
 3. Click the "Management Certificate Template" tab near the top of the screen.
