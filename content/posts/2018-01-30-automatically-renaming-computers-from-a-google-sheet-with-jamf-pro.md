@@ -161,7 +161,7 @@ Scripts_ and create a new script.
 
 Paste the contents of `rename-computer.py` into the Script Contents area.
 
-{{< gist haircut 1debf91078ce75612bf2f0c3b3d99f03 "rename-computer.py") }}
+<script src="https://gist.github.com/haircut/1debf91078ce75612bf2f0c3b3d99f03.js"></script>
 
 Under the Options tab, set Parameter 4 to "CSV URL".
 
