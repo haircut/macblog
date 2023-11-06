@@ -1,6 +1,6 @@
 +++
 title = "Use AutoPkg to package GitHub repositories with no binary assets"
-date = 2023-11-04
+date = 2023-11-06
 description = "How to package GitHub repositories with AutoPkg, even when no binary assets are present."
 path = "autopkg-github-no-assets"
 [extra]
@@ -9,12 +9,12 @@ github_discussion = "https://github.com/haircut/macblog/discussions/25"
 +++
 
 GitHub is a popular channel for software distribution, and AutoPkg simplifies the task of packaging GitHub-released apps.
-AutoPkg's built-in `GitHubReleasesInfoProvider` processor is the standard method to detect the latest version of an app provided using GitHub's [Releases][releases] feature.
-However, the processor expects a binary asset attached to the release.
+AutoPkg's `GitHubReleasesInfoProvider` processor is the standard method for identifying the latest version of software released using GitHub's [Releases][releases] feature, but it has one key requirement - a binary asset must be attached to the release.
 
-Not all software follows this convention, such as a repository containing a simple shell script or non-binary assets.
+However, not all software adheres to this convention.
+Some repositories might only contain simple shell scripts or other non-binary assets. 
 
-To work around the limitation of `GitHubReleasesInfoProvider`, you can use AutoPkg's `URLTextSearcher` and `URLDownloader` processors to download the release in the form of a zip archive.
+To work around this requirement of `GitHubReleasesInfoProvider`, you can use AutoPkg's `URLTextSearcher` and `URLDownloader` processors to download the release in the form of a zip archive.
 
 <!-- more -->
 
@@ -25,7 +25,7 @@ You can access the URLs of these archives via GitHub's REST API at the following
 https://github.com/api/v3/repos/{OWNER}/{REPOSITORY}/releases/latest
 ```
 
-Within the JSON response, you'll find a key called "zipball_url" that points to the zip archive:
+The JSON response contains a key called "zipball_url" which points to the zip archive:
 
 ```plaintext
 {
@@ -35,14 +35,15 @@ Within the JSON response, you'll find a key called "zipball_url" that points to 
 }
 ```
 
-Extracting this URL is simple using the `URLTextSearcher` processor and the regular expression `zipball_url\": \"(.*)\"`. Then, download the archive using the `URLDownloader` processor.
+Extracting this URL is straighforward using the `URLTextSearcher` processor and the regular expression `zipball_url\": \"(.*)\"`.
+Once extracted, you can download the archive using the URLDownloader processor.
 
-With an archive of the repository downloaded, you can run any additional processors required to package the repository contents as you need.
+With an archive of the repository downloaded, you can proceed with additional processors as needed to package the repository contents.
 
 ## Example
 
-Consider an example repository containing a shell script named `example.sh`. The desired outcome is to produce an installer package that places an executable copy of this script in the default path.
-Here is a complete example recipe:
+Consider an example repository that contains a shell script named `example.sh`, and your goal is to create an installer package that places an executable copy of this script in the default path.
+Below is a complete example recipe process:
 
 ```yaml
 Process:
@@ -99,26 +100,27 @@ Process:
         id: "org.macblog.githubexample"
         options: purge_ds_store
         scripts: scripts
-        version: "%version%"
+        version: "1.0.0"
         chown:
           - path: usr
             user: root
             group: admin
 ```
 
-First, the recipe finds the latest release of the target repository and its associated `zipball_url` using `URLTextSearcher`.
-Then it downloads that archive using `URLDownloader`.
+First, the recipe will locate the latest release of the target repository and its associated `zipball_url` using `URLTextSearcher`.
+Next, it will download the archive using `URLDownloader`.
 
-Next, the recipes extracts the archive and creates a root directory for building an installer package.
-It copies the target shell script `example.sh` from the extracted repository contents to the package root directory in the required location (e.g. `/usr/local/bin/example`), then creates a `postinstall` script that ensures that file is executable once installed.
+Following that, the recipe will extract the archive and create a root directory for building an installer package.
+It will then copy the target shell script `example.sh` from the extracted repository contents to the package root directory at the required location (e.g., `/usr/local/bin/example`). 
+Finally, a `postinstall` script is created to ensure that the file is executable after installation, and everything is packaged into a `.pkg`.
 
-Finally, it packages everything up into a `.pkg`.
 
 ## Authentication for private repos
 
-You can also use this recipe pattern to access releases without assets in private repositories.
-You'll need to create a [personal access token][pat], then [set the `GITHUB_TOKEN` environment variable][patvar] using that personal access token.
-Then, simply add an authentication header to the `URLTextSearcher` and `URLDownloader` processors like so:
+This recipe pattern is also handy for accessing releases without assets in private repositories. 
+To do this, you'll need to create a [personal access token][pat] and set the `GITHUB_TOKEN` environment variable [as described here][patvar].
+Then, simply add an `Authorization` header using Bearer authentication to the `URLTextSearcher` and `URLDownloader` processors as follows:
+
 
 ```yaml
 - Processor: URLTextSearcher
@@ -139,7 +141,7 @@ Then, simply add an authentication header to the `URLTextSearcher` and `URLDownl
       Authorization: "Bearer %GITHUB_TOKEN%"
 ```
 
-This method keeps your options open for packaging a variety of GitHub releases, whether they include binary assets or not.
+This approach keeps your options open for packaging a variety of GitHub releases, whether they include binary assets or not.
 
 [releases]: https://docs.github.com/en/repositories/releasing-projects-on-github/about-releases
 [pat]: https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens
