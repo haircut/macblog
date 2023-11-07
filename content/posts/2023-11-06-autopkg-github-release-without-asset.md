@@ -22,7 +22,7 @@ Every GitHub release automatically provides compressed archives of repository co
 You can access the URLs of these archives via GitHub's REST API at the following endpoint:
 
 ```plaintext
-https://github.com/api/v3/repos/{OWNER}/{REPOSITORY}/releases/latest
+https://api.github.com/repos/{OWNER}/{REPOSITORY}/releases/latest
 ```
 
 The JSON response contains a key called "zipball_url" which points to the zip archive:
@@ -49,7 +49,7 @@ Below is a complete example recipe process:
 Process:
   - Processor: URLTextSearcher
     Arguments:
-      url: https://github.com/api/v3/repos/OWNER/REPOSITORY/releases/latest
+      url: https://api.github.com/repos/{OWNER}/{REPOSITORY}/releases/latest
       re_pattern: "zipball_url\": \"(.*)\""
       result_output_var_name: "zipball_url"
       request_headers:
@@ -125,7 +125,7 @@ Then, simply add an `Authorization` header using Bearer authentication to the `U
 ```yaml
 - Processor: URLTextSearcher
   Arguments:
-    url: https://github.com/api/v3/repos/OWNER/REPOSITORY/releases/latest
+    url: https://api.github.com/repos/{OWNER}/{REPOSITORY}/releases/latest
     re_pattern: "zipball_url\": \"(.*)\""
     result_output_var_name: "zipball_url"
     request_headers:
