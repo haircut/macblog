@@ -33,8 +33,8 @@ Attribution-ShareAlike 4.0 International](#license).
 There are no analytics, "hit counters" or use tracking on **MacBlog.org**. I
 have no idea how many people visit this site and have no access any server logs.
 
-**MacBlog.org** is hosted by [Netlify][netlify]. Please see the
-[Netlify Privacy Policy][netlifypp] for details about what information their
+**MacBlog.org** is hosted by [Cloudflare][cloudflare]. Please see the
+[Cloudflare Privacy Policy][cfpp] for details about what information their
 infrastructure may collect.
 
 I do not subscribe to Netlify's "Analytics" feature.
@@ -111,8 +111,8 @@ given on this website or for any consequential, special or similar damages, even
 if advised of the possibility of such damages.
 
 
-[netlify]: <https://www.netlify.com>
-[netlifypp]: <https://www.netlify.com/privacy/>
+[cloudflare]: <https://pages.cloudflare.com>
+[cfpp]: <https://www.cloudflare.com/privacypolicy/>
 [ccbysa]: <https://creativecommons.org/licenses/by-sa/4.0/>
 [git]: <https://github.com/haircut/macblog>
 [mit]: <https://opensource.org/licenses/MIT>
