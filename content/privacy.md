@@ -48,8 +48,6 @@ Please see the
 [Cloudflare Privacy Policy][cfpp] for details about what information their
 infrastructure may collect.
 
-I do not subscribe to Netlify's "Analytics" feature.
-
 ## Use of cookies
 
 **MacBlog.org** does not set, read, or use any cookies.
