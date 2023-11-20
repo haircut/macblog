@@ -3,6 +3,8 @@ title = "Privacy policy, license and disclaimers"
 aliases = ["privacy-policy", "use-of-cookies"]
 +++
 
+_Last updated November 19, 2023._
+
 - [Privacy policy](#privacy-policy)
 - [Terms of service](#terms-of-service)
 - [Analytics](#analytics)
@@ -11,6 +13,7 @@ aliases = ["privacy-policy", "use-of-cookies"]
 - [Disclaimer](#disclaimer)
 - [External links](#external-links)
 - [Use at your own risk](#use-at-your-own-risk)
+- [Changelog](#changelog)
 
 ## Privacy policy
 
@@ -30,10 +33,18 @@ Attribution-ShareAlike 4.0 International](#license).
 
 ## Analytics
 
-There are no analytics, "hit counters" or use tracking on **MacBlog.org**. I
-have no idea how many people visit this site and have no access any server logs.
+**MacBlog.org** is hosted by [Cloudflare][cloudflare]. Cloudflare provides an
+"[account analytics][cfanalytics]" feature that displays aggregated metrics
+including the number of visitors (unique IPs) accessing all websites under my
+Cloudflare account.
 
-**MacBlog.org** is hosted by [Cloudflare][cloudflare]. Please see the
+**MacBlog.org does not use** [Cloudflare's Web Analytics][cfwa] product, which
+is a distinct _Real User Monitoring_ product.
+
+Effectively, I can see how many people visit this website in a given time
+period, but no detail about who they are or even which specific pages they load.
+
+Please see the
 [Cloudflare Privacy Policy][cfpp] for details about what information their
 infrastructure may collect.
 
@@ -110,6 +121,11 @@ anyone else for any decision made or action taken in reliance on the information
 given on this website or for any consequential, special or similar damages, even
 if advised of the possibility of such damages.
 
+## Changelog
+
+- **2023-11-19:** MacBlog.org is now hosted by Cloudflare (previously Netlify).
+  Analytics section updated.
+
 
 [cloudflare]: <https://pages.cloudflare.com>
 [cfpp]: <https://www.cloudflare.com/privacypolicy/>
@@ -118,3 +134,5 @@ if advised of the possibility of such damages.
 [mit]: <https://opensource.org/licenses/MIT>
 [simple]: <https://simplecss.org>
 [kev]: <https://kevq.uk>
+[cfanalytics]: <https://developers.cloudflare.com/analytics/account-and-zone-analytics/account-analytics/>
+[cfwa]: <https://developers.cloudflare.com/analytics/web-analytics/>
