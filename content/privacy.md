@@ -124,7 +124,8 @@ if advised of the possibility of such damages.
 ## Changelog
 
 - **2023-11-19:** MacBlog.org is now hosted by Cloudflare (previously Netlify).
-  Analytics section updated.
+  Analytics section updated. Please refer to [this diff][analyticsdiff] for full
+  details on this update.
 
 
 [cloudflare]: <https://pages.cloudflare.com>
@@ -136,3 +137,4 @@ if advised of the possibility of such damages.
 [kev]: <https://kevq.uk>
 [cfanalytics]: <https://developers.cloudflare.com/analytics/account-and-zone-analytics/account-analytics/>
 [cfwa]: <https://developers.cloudflare.com/analytics/web-analytics/>
+[analyticsdiff]: <https://github.com/haircut/macblog/commit/f6b726cc253ffc13fb7f61fbfc42c2abcb499a39>
